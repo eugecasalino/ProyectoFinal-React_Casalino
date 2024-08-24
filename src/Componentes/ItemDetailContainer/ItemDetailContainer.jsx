@@ -1,36 +1,35 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { doc, getDoc } from 'firebase/firestore'
-import { db } from '../../Services/firebaseConfig'
-import ItemDetail from '../ItemDetail/ItemDetail'
-
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../Services/firebaseConfig';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
     const { itemId } = useParams();
-    const [item, setItem] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+    const [item, setItem] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const docRef = doc(db, 'items', itemId)
-                const docSnap = await getDoc(docRef)
+                const docRef = doc(db, 'items', itemId);
+                const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                    setItem({ id: docSnap.id, ...docSnap.data() })
+                    setItem({ id: docSnap.id, ...docSnap.data() });
                 } else {
-                    setError('El producto no existe')
+                    setError('El producto no existe');
                 }
             } catch (err) {
-                setError('Error al obtener el producto. Por favor, inténtelo de nuevo más tarde.')
+                setError('Error al obtener el producto. Por favor, inténtelo de nuevo más tarde.');
             } finally {
-                setLoading(false)
+                setLoading(false);
             }
-        }
+        };
 
-        fetchItem()
-    }, [itemId])
+        fetchItem();
+    }, [itemId]);
 
     if (loading) {
         return <h2>Cargando...</h2>;
@@ -41,6 +40,6 @@ const ItemDetailContainer = () => {
     }
 
     return item ? <ItemDetail producto={item} /> : <h2>Producto no encontrado</h2>;
-}
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

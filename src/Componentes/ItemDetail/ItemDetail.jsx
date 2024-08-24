@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'
 import ItemCount from '../../ItemCount/ItemCount'
 
 
-    export const ItemDetail = ({ producto }) => {
-    
-    
+    const ItemDetail = ({ producto }) => {
+        
     const { id, nombre, image, precio, description } = producto
     const { itemExists } = useContext(CartContext)
 
@@ -24,3 +23,5 @@ import ItemCount from '../../ItemCount/ItemCount'
         </div>
     )
 }
+
+export default ItemDetail
