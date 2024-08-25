@@ -29,7 +29,6 @@ const Checkout = () => {
         setIsSubmitting(false)
     }
 
-<<<<<<< HEAD
     if (order) {
         return <h3>Compra realizada. El número de tu pedido es: {order}</h3>
     }
@@ -47,25 +46,6 @@ const Checkout = () => {
             </form>
         </div>
     )
-=======
-        if (order) {
-            return <h3>Compra realizada. ID de la orden: {order}</h3>
-        }
-
-        return (
-            <div>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <p className='label'>Nombre: </p>
-                <input type="text" placeholder='Nombre y Apellido' onChange={e => setNombre(e.target.value)}/>
-                <p className='label'>Email: </p>
-                <input type="text" placeholder='Correo electrónico' onChange={e => setEmail(e.target.value)}/>
-                <p className='label'>Teléfono: </p>
-                <input type="number" placeholder='Teléfono' onChange={e => setTelefono(e.target.value)}/>
-                <button type='submit'>{isSubmitting ? 'Cargando...' : 'Confirmar compra'}</button>
-            </form>
-        </div>
-        )
->>>>>>> 666d4237d8c893a2ef4239b03642c9c22f30ef35
 }
 
 export default Checkout
