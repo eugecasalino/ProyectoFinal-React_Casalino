@@ -15,8 +15,13 @@ const NavBar = () => {
                     <li><Link className='btn' to='/categoria/buzos'>Buzos</Link></li>
                 </ul>
             </div>
+<<<<<<< HEAD
             <div>
                 <Link to='/cart'>  <CartWidget /> </Link>
+=======
+            <div className='cart-widget'>
+                <CartWidget />
+>>>>>>> 666d4237d8c893a2ef4239b03642c9c22f30ef35
             </div>
         </div>
     )
