@@ -7,6 +7,7 @@ import { CartContextProvider } from './Context/CartContext'
 import Cart from './Componentes/Cart/Cart'
 import { Checkout } from './Componentes/Checkout/Checkout'
 
+
 function App() {
 
   return (

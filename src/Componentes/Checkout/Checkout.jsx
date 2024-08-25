@@ -1,9 +1,9 @@
 import { useContext, useState } from "react"
 import { db } from '../../Services/firebaseConfig'
 import { addDoc, collection } from 'firebase/firestore'
-import { CartContext } from '../context/CartContext'
+import { CartContext } from '../../Context/CartContext'
 
-const Checkout = () => {
+export const Checkout = () => {
     const [nombre, setNombre] = useState("")
     const [email, setEmail] = useState("")
     const [telefono, setTelefono] = useState("")
@@ -47,5 +47,3 @@ const Checkout = () => {
         </div>
     )
 }
-
-export default Checkout
